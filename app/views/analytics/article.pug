@@ -1,0 +1,113 @@
+-let years = []
+-for(let year = 2001; year <= 2020; year ++) {years.push(year)}
+.row
+  .col-lg-12
+    .main-card.mb-3.card
+      .card-body
+        h5.card-title Select an article
+        div
+          select#article-select.mb-2.form-control
+        h5.card-title From
+        div
+          select#article-from.mb-2.form-control
+            each year in years
+              option(value=year)= year
+        h5.card-title To
+        div
+          select#article-to.mb-2.form-control
+            each year in years
+              option(value=year)= year
+        button#article-search-btn.mt-1.btn.btn-primary Search
+
+.row.mt-4
+  .col-md-12
+    #article-analytics-results.accordion-wrapper.mb-3
+
+//- Bar Chart 1: The bar chart of revision number distributed by year and by user type for this article.
+.row.mt-4
+  .col-md-12
+    .main-card.mb-3.card
+      .card-body#article-chart-1
+        .chartjs-size-monitor(style='position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;')
+          .chartjs-size-monitor-expand(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+            div(style='position:absolute;width:1000000px;height:1000000px;left:0;top:0')
+          .chartjs-size-monitor-shrink(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+            div(style='position:absolute;width:200%;height:200%;left:0; top:0')
+        h5.card-title Revision number distribution by year & by user type
+        canvas#article-analytics-chart-1.chartjs-render-monitor
+
+//- Pie Chart 2: The bar chart of revision number distributed by year and by user type for this article.
+.row.mt-4
+  .col-md-12
+    .main-card.mb-3.card
+      .card-body#article-chart-2
+        .chartjs-size-monitor(style='position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;')
+          .chartjs-size-monitor-expand(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+            div(style='position:absolute;width:1000000px;height:1000000px;left:0;top:0')
+          .chartjs-size-monitor-shrink(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+            div(style='position:absolute;width:200%;height:200%;left:0; top:0')
+        h5.card-title Revision number distribution based on user type
+        canvas#article-analytics-chart-2.chartjs-render-monitor
+
+//- Bar Chart 3: The bar chart of revision number distributed by year and by user type for this article.
+.row.mt-4
+  .col-md-12
+    .main-card.card
+      .card-body
+        ul.tabs-animated-shadow.nav-justified.tabs-animated.nav
+          li.nav-item
+            a#tab-c1-0.nav-link.active.show(role='tab' data-toggle='tab' href='#article-chart3-user0' aria-selected='false')
+              span.nav-text User 1
+          li.nav-item
+            a#tab-c1-1.nav-link.show(role='tab' data-toggle='tab' href='#article-chart3-user1' aria-selected='false')
+              span.nav-text User 2
+          li.nav-item
+            a#tab-c1-2.nav-link.show(role='tab' data-toggle='tab' href='#article-chart3-user2' aria-selected='false')
+              span.nav-text User 3
+          li.nav-item
+            a#tab-c1-3.nav-link.show(role='tab' data-toggle='tab' href='#article-chart3-user3' aria-selected='false')
+              span.nav-text User 4
+          li.nav-item
+            a#tab-c1-4.nav-link.show(role='tab' data-toggle='tab' href='#article-chart3-user4' aria-selected='false')
+              span.nav-text User 5
+        .tab-content
+          #article-chart3-user0.tab-pane.active.show(role='tabpanel')
+            .chartjs-size-monitor(style='position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;')
+              .chartjs-size-monitor-expand(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:1000000px;height:1000000px;left:0;top:0')
+              .chartjs-size-monitor-shrink(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:200%;height:200%;left:0; top:0')
+            h5.card-title Revision number distribution by user type
+            canvas#article-chart-user-0.chartjs-render-monitor
+          #article-chart3-user1.tab-pane.show(role='tabpanel')
+            .chartjs-size-monitor(style='position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;')
+              .chartjs-size-monitor-expand(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:1000000px;height:1000000px;left:0;top:0')
+              .chartjs-size-monitor-shrink(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:200%;height:200%;left:0; top:0')
+            h5.card-title Revision number distribution by user type
+            canvas#article-chart-user-1.chartjs-render-monitor
+          #article-chart3-user2.tab-pane.show(role='tabpanel')
+            .chartjs-size-monitor(style='position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;')
+              .chartjs-size-monitor-expand(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:1000000px;height:1000000px;left:0;top:0')
+              .chartjs-size-monitor-shrink(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:200%;height:200%;left:0; top:0')
+            h5.card-title Revision number distribution by user type
+            canvas#article-chart-user-2.chartjs-render-monitor
+          #article-chart3-user3.tab-pane.show(role='tabpanel')
+            .chartjs-size-monitor(style='position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;')
+              .chartjs-size-monitor-expand(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:1000000px;height:1000000px;left:0;top:0')
+              .chartjs-size-monitor-shrink(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:200%;height:200%;left:0; top:0')
+            h5.card-title Revision number distribution by user type
+            canvas#article-chart-user-3.chartjs-render-monitor
+          #article-chart3-user4.tab-pane.show(role='tabpanel')
+            .chartjs-size-monitor(style='position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;')
+              .chartjs-size-monitor-expand(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:1000000px;height:1000000px;left:0;top:0')
+              .chartjs-size-monitor-shrink(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
+                div(style='position:absolute;width:200%;height:200%;left:0; top:0')
+            h5.card-title Revision number distribution by user type
+            canvas#article-chart-user-4.chartjs-render-monitor

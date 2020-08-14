@@ -1,0 +1,53 @@
+extends layouts/layout
+
+block content
+  p.title Welcome to WikiLatic: #{username}
+   #app-home.container
+    .row
+      .col-md-12.text-center
+        h1.mb-3 WikiLatics
+        p.lead.mb-4
+          | Please you Import Data first,
+          | then Get Started to Our Application
+        .row.mx-n2
+          .col-md.px-2.mb-3
+            button#import-data.btn-transition.btn.btn-outline-primary.btn-block Import Data
+          .col-md.px-2.mb-3
+            a(href='/analytics')#get-started.btn-transition.btn.btn-outline-success.btn-block Get Started
+
+    .card-body
+  h2.card-title Brief Introduction to WikiLatic Functionality
+  #exampleAccordion(data-children='.item')
+    .item
+      button.m-0.p-0.btn.btn-link.collapsed(type='button' aria-expanded='false' aria-controls='exampleAccordion1' data-toggle='collapse' href='#collapseExample') Overall Analytics
+      #collapseExample.collapse(data-parent='#exampleAccordion' style='')
+        p.mb-4
+          | • The top two articles with the highest/lowest number of revisions and their number of revisions. <br>
+          | • The top two articles edited by the largest/smallest group of registered users and their group size. <br>
+          | • The top two articles with the longest/shortest history (measured by age) and their age (in days). <br>
+          | • A bar/line chart of revision number distribution by year and by user type. <br>
+          | • A pie chart of revision number distribution by user type.
+    .item
+      button.m-0.p-0.btn.btn-link.collapsed(type='button' aria-expanded='false' aria-controls='exampleAccordion2' data-toggle='collapse' href='#collapseExample2') Author Analytics
+      #collapseExample2.collapse(data-parent='#exampleAccordion' style='')
+        p.mb-4
+          | • Display the articles’ names along with number of revisions made by that author next to it
+
+    .item
+          button.m-0.p-0.btn.btn-link.collapsed(type='button' aria-expanded='false' aria-controls='exampleAccordion3' data-toggle='collapse' href='#collapseExample3') Individual Analytics
+          #collapseExample3.collapse(data-parent='#exampleAccordion' style='')
+            p.mb-4
+              | • The total number of revisions. <br>
+              | • The top 5 regular users ranked by total revision numbers on this article, and the respective revision numbers. <br> 
+              | • The top 3 news about the selected individual article obtained using Rediit API to realise information updates and release.
+    .item
+      button.m-0.p-0.btn.btn-link.collapsed(type='button' aria-expanded='false' aria-controls='exampleAccordion4' data-toggle='collapse' href='#collapseExample4') A Simple Chart of Overall Analytics
+      #collapseExample4.collapse(data-parent='#exampleAccordion' style='')
+        img(width='650' src='/images/overall.png' alt='')
+    .item
+      button.m-0.p-0.btn.btn-link.collapsed(type='button' aria-expanded='false' aria-controls='exampleAccordion5' data-toggle='collapse' href='#collapseExample5') A Simple Chart of Individual Analytics
+      #collapseExample5.collapse(data-parent='#exampleAccordion' style='')
+        img(width='650' src='/images/individual.png' alt='')
+block javascripts-foot
+  script(src="/javascripts/index.js")
+  link(rel='stylesheet', href='/css/index.css')

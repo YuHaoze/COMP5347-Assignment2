@@ -1,0 +1,30 @@
+extends ../../layouts/layout
+
+block content
+  .tab-content
+    #tab-content-0.tab-pane.tabs-animation.fade.show.active(role='tabpanel')
+      .row.justify-content-center
+        .col-md-6
+          .main-card.mb-3.card
+            .card-body
+              h5.card-title Forgot Password
+              form#reset-form(action='/forgot-pwd' method='POST')
+                .position-relative.form-group
+                  label(for='email') Please type your account email!
+                  input#email.form-control(name='email' placeholder='Email' type='email')
+                .position-relative.form-group
+                  label(for='question') Security Question One: Where are you from?
+                  //- select.mb-2.form-control#question
+                  //-   option(value='hometown') Where are you from?
+                  //-   option(value='language') What is your first language? 
+                  input#answer.form-control(name='answer1' placeholder='Security Question One' type='text')
+                  label(for='question') Security Question Two: What's your first name?
+                  input#answer.form-control(name='answer2' placeholder='Security Question Twos' type='text')  
+                button.mt-1.btn.btn-primary Submit
+                small.form-text.text-muted
+                  | Already had an account?
+                  a(href='/login') Log In
+
+block javascripts-foot
+  script(src="/javascripts/auth.js")
+  

@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(http-equiv='Content-Language' content='en')
+    meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no')
+    meta(name='description' content='This is an example dashboard created using build-in elements and components.')
+    meta(name='msapplication-tap-highlight' content='no')
+    title= title ? title : 'WikiLatics'
+    //- jQuery
+    script(src='/assets/jquery.min.js')
+    //- jQuery validation
+    script(src="assets/jquery.validate.min.js")
+    //- Sweet Alert 2
+    script(src='assets/sweetalert2.all.min.js')
+    link(rel='stylesheet', href='/assets/sweetalert2.min.css')
+
+    link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', href='/css/app.css')
+    link(rel='stylesheet', href='/css/styles.css')
+    block stylesheets
+
+    block javascripts-head
+  body
+    .app-container.app-theme-white.body-tabs-shadow.fixed-sidebar.fixed-header
+      include _header
+
+      .app-main
+        .app-main__outer.no_sidebar
+          .app-main__inner
+            block content
+
+      include _footer
+      include _message
+
+    script(src='/javascripts/main.js')
+    script(src='/javascripts/app.js')
+    block javascripts-foot

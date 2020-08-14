@@ -1,0 +1,70 @@
+block javascripts-foot
+    link(href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" rel="stylesheet")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js")
+    script(src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js")
+    script(src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js")
+    script(src='/javascripts/moment.min.js')
+    script(src='https://www.gstatic.com/charts/loader.js')
+
+div#Overall
+    form#formNumberOfTopArticles(class="form-inline")
+        div(class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group")
+            label(for="numberOfTopArticles" class="mr-sm-2") Number of top articles:
+            div(class="form-group mx-sm-3 mb-2")
+                input(type="number" id="numberOfTopArticles" name="numberOfTopArticles" min="1" value="2" class="mt-2 form-control" style="width:100px")
+            input(type="submit" value="submit" class="btn btn-primary")
+    hr
+    table(id="highestRevisionsTable" class="table" style="width:100%")
+        caption Articles with the highest number of revisions
+        thead
+            tr
+                th Title
+                th Number of revisions
+    hr
+    table(id="lowestRevisionsTable" class="table" style="width:100%")
+        caption Articles with the lowest number of revisions
+        thead
+            tr
+                th Title
+                th Number of revisions
+    hr
+    table(id="highestGroupTable" class="table" style="width:100%")
+        caption Articles edited by the largest group of registered users
+        thead
+            tr
+                th Title
+                th Group size
+    hr
+    table(id="lowestGroupTable" class="table" style="width:100%")
+        caption Articles edited by the lowest group of registered users
+        thead
+            tr
+                th Title
+                th Group size
+    hr
+    table(id="longestHistoryTable" class="table" style="width:100%")
+        caption Articles with the longest history and and their age.
+        thead
+            tr
+                th Title
+                th Creation time
+                th Age (in days)
+    hr
+    table(id="shortestHistoryTable" class="table" style="width:100%")
+        caption Articles with the shortest history and and their age.
+        thead
+            tr
+                th Title
+                th Creation time
+                th Age (in days)
+    hr
+    div(class="btn-group" role="group")
+      button(type="button" class="btn btn-outline-primary active" id="barLineChartButton") Revision number distribution by year and by user type (Bar/Line chart)
+      button(type="button" class="btn btn-outline-primary" id="pieChartButton") Revision number distribution by user type (Pie chart)
+    div(class="btn-group" role="group" style="margin: 10px 0px; display: block;" id="barLineButtonDiv")
+        button(type="button" class="btn btn-outline-primary active" id="barChartButton") Bar Chart
+        button(type="button" class="btn btn-outline-primary" id="lineChartButton") Line Chart
+    div(id="columnChart")
+    div(id="lineChart")
+    div(id="pieChart")
+    div(id="pieChartSummary" class="border" style="max-width: 600px; margin: 0 150px 0 150px; text-align: center;")

@@ -1,0 +1,38 @@
+.app-header.header-shadow
+  .app-header__logo
+    .logo-src
+  .app-header__mobile-menu
+  .app-header__menu
+    span
+      button.btn-icon.btn-icon-only.btn.btn-primary.btn-sm.mobile-toggle-header-nav(type='button')
+        span.btn-icon-wrapper
+          i.fa.fa-ellipsis-v.fa-w-6
+  .app-header__content
+    .app-header-left
+    .app-header-right
+      if username
+        .header-btn-lg.pr-0
+        .widget-content.p-0
+          .widget-content-wrapper
+            .widget-content-left
+              .btn-group
+                a.p-0.btn(data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  img.rounded-circle(width='42' src='/images/avatars/2.jpg' alt='')
+                  i.fa.fa-angle-down.ml-2.opacity-8
+                .dropdown-menu.dropdown-menu-right(tabindex='-1' role='menu' aria-hidden='true')
+                  a#logout(href="/logout")
+                    button.dropdown-item(type='button' tabindex='0') Log Out
+            .widget-content-left.ml-3.header-user-info
+              .widget-heading= username
+              .widget-subheading
+                | WikiLatics Analyst
+      else
+        ul.header-menu.nav
+          li.nav-item
+            a.nav-link(href='/login')
+              i.nav-link-icon.fa.fa-database
+              | Log In
+          li.btn-group.nav-item
+            a.nav-link(href='/register')
+              i.nav-link-icon.fa.fa-edit
+              | Sign Up

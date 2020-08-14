@@ -1,0 +1,26 @@
+extends ../layouts/layout
+
+block content
+  .tab-content
+    #tab-content-0.tab-pane.tabs-animation.fade.show.active(role='tabpanel')
+      .row.justify-content-center
+        .col-md-6
+          .main-card.mb-3.card
+            .card-body
+              h5.card-title Log In
+              form#login-form(action='/login' method='POST')
+                .position-relative.form-group
+                  label(for='email') Email
+                  input#email.form-control(name='email' placeholder='Email' type='email' value=old_email)
+                .position-relative.form-group
+                  label(for='password') Password
+                  input#password.form-control(name='password' placeholder='Password' type='password' value=old_password)
+                button.mt-1.btn.btn-primary Log In
+                small.form-text.text-muted
+                  a(href='/forgot-pwd') Forgot password?
+                small.form-text.text-muted
+                  | Don't have an account?
+                  a(href='/register') Sign Up
+
+block javascripts-foot
+  script(src="/javascripts/auth.js")

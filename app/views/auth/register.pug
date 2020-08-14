@@ -1,0 +1,40 @@
+extends ../layouts/layout
+
+block content
+  .tab-content
+    #tab-content-0.tab-pane.tabs-animation.fade.show.active(role='tabpanel')
+      .row.justify-content-center
+        .col-md-6
+          .main-card.mb-3.card
+            .card-body
+              h5.card-title Sign Up
+              form#register-form(action='/register' method='POST')
+                .position-relative.form-group
+                  label(for='firstname') firstname
+                  input#firstname.form-control(name='firstname' placeholder='firstname' type='text' value=old_firstname)
+                .position-relative.form-group
+                  label(for='lastname') lastname
+                  input#lastname.form-control(name='lastname' placeholder='lastname' type='text' value=old_lastname)
+                .position-relative.form-group
+                  label(for='email') Email
+                  input#email.form-control(name='email' placeholder='Email' type='email' value=old_email)
+                .position-relative.form-group
+                  label(for='password') Password
+                  input#password.form-control(name='password' placeholder='Password' type='password' value=old_password)
+                .position-relative.form-group
+                  label(for='password-confirm') Confirm Password
+                  input#password-confirm.form-control(name='password_confirm' placeholder='Confirm Password' type='password' value=old_password_confirm)
+                .position-relative.form-group
+                  label(for='answer1') Security Question One: Where are you from?
+                  input#answer1.form-control(name='answer1' placeholder='Security Question One' type='text')
+                .position-relative.form-group
+                  label(for='answer2') Security Question Two: What's your first name?
+                  input#answer2.form-control(name='answer2' placeholder='Security Question Two' type='text')
+                button.mt-1.btn.btn-primary Sign Up
+                small.form-text.text-muted
+                  | Already had an account?
+                  a(href='/login') Log In
+
+block javascripts-foot
+  script(src="/javascripts/auth.js")
+
